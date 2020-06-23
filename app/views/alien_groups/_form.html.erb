@@ -1,0 +1,36 @@
+<%= form_with(model: alien_group, url: @planet ? planet_alien_groups_path : alien_groups_path, local: true) do |form| %>
+  <% if alien_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(alien_group.errors.count, "error") %> prohibited this alien_group from being saved:</h2>
+
+      <ul>
+      <% alien_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desription %>
+    <%= form.text_field :desription %>
+  </div>
+
+  <% if @planet %>
+    <%= form.hidden_field :planet_id, value: @planet.id %>
+  <% else %>
+    <div class="field">
+      <%= form.label :planets %>
+      <%= form.collection_select :planet_id, Planet.all, :id, :name %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  galaxy: MyString
+  temperature: 1
+  moons: 1
+
+two:
+  name: MyString
+  galaxy: MyString
+  temperature: 1
+  moons: 1

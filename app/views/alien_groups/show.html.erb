@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @alien_group.name %>
+</p>
+
+<p>
+  <strong>Desription:</strong>
+  <%= @alien_group.desription %>
+</p>
+
+<p>
+  <strong>Planet:</strong>
+  <%= link_to @alien_group.planet.name, @alien_group.planet%>
+</p>
+
+<%= link_to 'Edit', edit_alien_group_path(@alien_group) %> |
+<%= link_to 'Back', alien_groups_path %>

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1><%= @planet && "#{@planet.name}'s "%>Alien Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desription</th>
+      <th>Planet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alien_groups.each do |alien_group| %>
+      <tr>
+        <td><%= alien_group.name %></td>
+        <td><%= alien_group.desription %></td>
+        <td><%= link_to alien_group.planet.name, alien_group.planet%></td>
+        <td><%= link_to 'Show', @planet ? planet_alien_group_path(@planet, alien_group) : alien_group %></td>
+        <td><%= link_to 'Edit', edit_alien_group_path(alien_group) %></td>
+        <td><%= link_to 'Destroy', alien_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alien Group', @planet ? new_planet_alien_group_path(@planet) : new_alien_group_path %>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @planet.name %>
+</p>
+
+<p>
+  <strong>Galaxy:</strong>
+  <%= @planet.galaxy %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @planet.temperature %>
+</p>
+
+<p>
+  <strong>Moons:</strong>
+  <%= @planet.moons %>
+</p>
+
+<p>
+  <%= link_to "See All Aliens On This Planet", planet_alien_groups_path(@planet) %>
+</p>
+
+<%= link_to 'Edit', edit_planet_path(@planet) %> |
+<%= link_to 'Back', planets_path %>
